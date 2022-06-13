@@ -1,4 +1,4 @@
-sources = $(wildcard src/*.cpp)
+sources = $(wildcard src/**/*.cpp) $(wildcard src/*.cpp)
 objects = $(sources:.cpp=.o)
 flags = -g -Wall -Wextra -lm -ldl -fPIC -rdynamic
 
@@ -15,6 +15,7 @@ install:
 
 clean:
 	-rm src/*.o
+	-rm src/**/*.o
 	-rm coby
 	clear
 
