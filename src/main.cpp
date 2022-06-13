@@ -2,8 +2,7 @@
 #include <string>
 
 #include "args/argParser.h"
-
-CmdArgs* args;
+#include "args.h"
 
 int main(int argc, char* argv[]){
 
