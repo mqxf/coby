@@ -5,7 +5,7 @@ flags = -g -Wall -Wextra -lm -ldl -fPIC -rdynamic -std=c++17
 cobyc: $(objects)
 	g++ $(objects) $(flags) -o cobyc
 
-%.o: %.c include/%.h
+%.o: %.cpp %.h
 	g++ $(flags) $< -o $@ -c
 
 install:

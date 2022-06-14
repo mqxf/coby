@@ -2,7 +2,7 @@
 #include <string>
 
 #include "args/argParser.h"
-#include "args.h"
+#include "main.h"
 #include "file/file.h"
 
 int main(int argc, char* argv[]){
@@ -12,9 +12,6 @@ int main(int argc, char* argv[]){
 
     ArgParser* argParser = new ArgParser(arg, argc);
     args = argParser->parse();
-
-    File* file = new File(args->inputFilename);
-    file->write("Hello");
 
     return 0;
 }
