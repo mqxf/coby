@@ -3,6 +3,7 @@
 
 #include "args/argParser.h"
 #include "args.h"
+#include "file/file.h"
 
 int main(int argc, char* argv[]){
 
@@ -12,13 +13,8 @@ int main(int argc, char* argv[]){
     ArgParser* argParser = new ArgParser(arg, argc);
     args = argParser->parse();
 
-    std::cout << args->inputFilename << std::endl;
-    std::cout << args->outputFilename << std::endl;
-    std::cout << "Silent:" << args->silent << std::endl;
-    std::cout << "Verbose:" << args->verbose << std::endl;
-    std::cout << "Assembly:" << args->assembly << std::endl;
-    std::cout << "Object:" << args->object << std::endl;
-    std::cout << "Machine:" << args->machine << std::endl;
+    File* file = new File(args->inputFilename);
+    file->write("Hello");
 
     return 0;
 }

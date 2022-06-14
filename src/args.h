@@ -3,6 +3,6 @@
 
 #include "args/argParser.h"
 
-CmdArgs* args;
+inline CmdArgs* args;
 
 #endif
