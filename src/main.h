@@ -1,13 +1,8 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
+#include <iostream>
 #include "args/argParser.h"
-
-enum Severity {
-    LOG,
-    WARNING,
-    ERROR
-};
 
 inline CmdArgs* args;
 

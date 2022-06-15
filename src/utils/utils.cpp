@@ -1,5 +1,7 @@
 #include <string>
+#include <iostream>
 #include "utils.h"
+#include "../main.h"
 
 char strToEsc(std::string str) {
     if (str.length() <= 1) return 0;
@@ -34,4 +36,16 @@ std::string strFormat(std::string str) {
         }
     }
     return out;
+}
+
+void log(std::string message, Severity severity) {
+    if (severity == Severity::ERROR) {
+        std::cerr << message;
+    }
+    else if (severity == Severity::WARNING && !args->silent) {
+        std::cout << message;
+    }
+    else if (severity == Severity::LOG && args->verbose) {
+        std::cout << message;
+    }
 }

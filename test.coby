@@ -175,7 +175,7 @@ Position: collection {
 Entity: class {
     pos: Position;
     rot: Position;
-    move(pos: Position, rot: Position) {
+    (pos: Position, rot: Position): Entity {
         pos => this.pos;
         this.rot = rot;
     }
@@ -183,7 +183,7 @@ Entity: class {
 
 Player: class extends Entity {
     UUID: double;
-    control() {
+    control(): void {
         move(new Position(), new Position())
         e: Position = new Position();
         10 => e.x;

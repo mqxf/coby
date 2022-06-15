@@ -2,21 +2,9 @@
 #include <iostream>
 #include <vector>
 #include "parser.h"
-#include "../main.h"
+#include "AST/rootAST.h"
 #include "../lexer/lexer.h"
 #include "../lexer/token.h"
-
-void log(std::string message, Severity severity) {
-    if (severity == Severity::ERROR) {
-        std::cerr << message;
-    }
-    else if (severity == Severity::WARNING && !args->silent) {
-        std::cout << message;
-    }
-    else if (severity == Severity::LOG && args->verbose) {
-        std::cout << message;
-    }
-}
 
 Parser::Parser(Lexer* lexer) {
     this->lexer = lexer;
@@ -48,7 +36,6 @@ Token* Parser::peek(size_t offset) {
     return nullptr;
 }
 
-//TODO: Replace with AST
-void parse() {
-
+RootAST* parse() {
+    return nullptr;
 }

@@ -2,6 +2,10 @@
 #define _PARSER_H
 
 #include <vector>
+#include "AST/rootAST.h"
+#include "AST/funcAST.h"
+#include "AST/exprAST.h"
+#include "AST/stmtAST.h"
 #include "../lexer/lexer.h"
 #include "../lexer/token.h"
 
@@ -19,7 +23,7 @@ class Parser {
         Parser(Lexer* lexer);
         size_t length() { return len; }
         std::string tokenStr();
-        void parse(); //TODO: Replace with AST
+        RootAST* parse();
 
 
 };

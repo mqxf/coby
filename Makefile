@@ -1,6 +1,6 @@
-sources = $(wildcard src/*.cpp) $(wildcard src/**/*.cpp) 
+sources = $(wildcard src/*.cpp) $(wildcard src/**/*.cpp) $(wildcard src/**/**/*.cpp) 
 objects = $(sources:.cpp=.o)
-flags = -g -Wall -Wextra -lm -ldl -fPIC -rdynamic -std=c++17
+flags = -g -Wall -Wextra -lm -ldl -fPIC -rdynamic -std=c++17 -I/usr/lib/llvm-14/include -fno-exceptions -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -L/usr/lib/llvm-14/lib -lLLVM-14
 
 cobyc: $(objects)
 	g++ $(objects) $(flags) -o cobyc
