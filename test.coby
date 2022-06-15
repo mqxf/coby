@@ -1,4 +1,4 @@
-#include math
+#include "math"
 
 #pi: double = 3.141592653589;
 #e: float = 2.718281828;
@@ -45,10 +45,10 @@
 ..ASAs
 
 ?(greetings not -? "normal"){
-
+    "Hello" => print();
 }
 &?(greetings !-? "hello"){
-
+    "Hi" => print();
 }
 
 main(): void {
@@ -61,7 +61,7 @@ main(): void {
     g: float = sin(pi); ..Included from math library
     addr: hex = @a;
 
-    names: list of string{
+    names: list of string {
         "james",
         "paul",
         "tom",
@@ -163,5 +163,30 @@ human: collection {
         MALE,
         FEMALE,
         OTHER
+    }
+}
+
+Position: collection {
+    x: float;
+    y: float;
+    z: float;
+}
+
+Entity: class {
+    pos: Position;
+    rot: Position;
+    move(pos: Position, rot: Position) {
+        pos => this.pos;
+        this.rot = rot;
+    }
+}
+
+Player: class extends Entity {
+    UUID: double;
+    control() {
+        move(new Position(), new Position())
+        e: Position = new Position();
+        10 => e.x;
+        e.y -> y: float;
     }
 }
