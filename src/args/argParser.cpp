@@ -27,7 +27,7 @@ CmdArgs* ArgParser::parse() {
                     cmdArgs->outputFilename = args[i];
                 }
             }
-            else if (args[i] == "-silent") {
+            else if (args[i] == "-silent" || args[i] == "-s") {
                 cmdArgs->silent = true;
                 cmdArgs->verbose = false;
             }

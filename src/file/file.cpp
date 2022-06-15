@@ -30,7 +30,7 @@ std::string File::read() {
     if (file.is_open()) {
         while(getline(file, line)) {
             buffer.append(line);
-            buffer.append("\n");
+            buffer.push_back('\n');
         }
         file.close();
     }

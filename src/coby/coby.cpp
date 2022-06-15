@@ -8,20 +8,22 @@
 std::string compile(std::string src) {
 
     Lexer* lexer = new Lexer(src);
-    Token* token = new Token("", Token::Type::TOKEN_ID);
+    Token* token;
+    std::string tokens;
 
-    while (token->type != Token::Type::TOKEN_EOF) {
-        token = lexer->nextToken();
-        std::cout << tokenToStr(token) << std::endl;
+    while ((token = lexer->nextToken())->type != Token::Type::TOKEN_EOF) {
+        //std::cout << tokenToStr(token) << std::endl;
+        tokens.append(tokenToStr(token));
+        tokens.push_back('\n');
     }
 
-    return "";
+    return tokens;
 }
 
 void compileFile(std::string inputFile, std::string outputFile) {
     File* inFile = new File(inputFile);
     std::string src = inFile->read();
     std::string out = compile(src);
-    //File* outFile = new File(outputFile);
-    //outFile->write(out);
+    File* outFile = new File(outputFile);
+    outFile->write(out);
 }
