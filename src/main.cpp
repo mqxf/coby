@@ -1,9 +1,10 @@
 #include <iostream>
 #include <string>
 
-#include "args/argParser.h"
 #include "main.h"
+#include "args/argParser.h"
 #include "file/file.h"
+#include "coby/coby.h"
 
 int main(int argc, char* argv[]){
 
@@ -12,6 +13,8 @@ int main(int argc, char* argv[]){
 
     ArgParser* argParser = new ArgParser(arg, argc);
     args = argParser->parse();
+
+    compileFile(args->inputFilename, args->outputFilename);
 
     return 0;
 }

@@ -1,3 +1,5 @@
+#include math
+
 #pi: double = 3.141592653589;
 #e: float = 2.718281828;
 #greeting: string = "Hello, welcome!";
@@ -56,6 +58,7 @@ main(): void {
     c: byte = 0xff;
     d: bin = 0b10010101;
     f: hex = 0x42d3f;
+    g: float = sin(pi); ..Included from math library
     addr: hex = @a;
 
     names: list of string{

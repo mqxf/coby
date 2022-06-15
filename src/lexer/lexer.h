@@ -7,16 +7,27 @@
 class Lexer {
 
     private:
-        std::string code;
+        std::string src;
         char c;
         size_t length;
         size_t i;
 
+        char peek(size_t offset);
         void advance();
-        void skipWhitespace();
+        void skipWhiteSpace();
+        void skipComment();
+        Token* advanceWith(Token* token);
+        Token* nextId();
+        Token* nextNumber();
+        Token* nextBinary();
+        Token* nextHexadecimal();
+        Token* nextFloat(std::string base);
+        Token* nextString();
+        Token* nextChar();
 
     public:
-        Lexer(std::string code);
+        Lexer(std::string src);
+        bool ended();
         Token* nextToken();
 
 };
