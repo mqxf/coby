@@ -6,7 +6,7 @@ cobyc: $(objects)
 	g++ $(objects) $(flags) -o cobyc
 
 %.o: %.cpp %.h
-	g++ $(flags) $< -o $@ -c
+	g++ -c $(flags) $< -o $@
 
 install:
 	make
