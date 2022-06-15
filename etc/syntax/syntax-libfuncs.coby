@@ -1,4 +1,5 @@
-include "iolib";
+#include "iolib";
+#include "math";
 
 main(argc: int, argv: list of string): void {
     print("Hello, world! ");
@@ -17,9 +18,13 @@ main(argc: int, argv: list of string): void {
     
     println("You are " + age + " years old");
 
-    name -> length => age;
+    name.length => age;
 
     age => print();
     
     exit(0);
+}
+
+extra(str: string, ...): void {
+    
 }

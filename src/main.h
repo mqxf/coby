@@ -3,6 +3,12 @@
 
 #include "args/argParser.h"
 
+enum Severity {
+    LOG,
+    WARNING,
+    ERROR
+};
+
 inline CmdArgs* args;
 
 #endif
