@@ -14,8 +14,7 @@ install:
 	make clean
 
 clean:
-	-rm src/*.o
-	-rm src/**/*.o
+	-rm $(objects)
 	-rm cobyc
 	clear
 
