@@ -9,7 +9,7 @@ enum Severity {
     ERROR
 };
 
-enum Type {
+enum DataType {
     INT,
     STRING,
     FLOAT,

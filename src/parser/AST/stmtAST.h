@@ -8,10 +8,12 @@
 #include "../../utils/utils.h"
 #include <llvm/IR/Value.h>
 
+using namespace llvm;
+
 class StatementAST {
     public:
         virtual ~StatementAST() {}
-        virtual llvm::Value* codegen() = 0;
+        virtual Value* codegen() = 0;
 };
 
 class IncludeAST : public StatementAST {
@@ -20,24 +22,27 @@ class IncludeAST : public StatementAST {
 
     public:
         IncludeAST(std::string library);
+        Value* codegen() override;
 };
 
 class ReturnAST : public StatementAST {
     private:
-        Type type;
+        DataType type;
         std::string value;
     public:
-        ReturnAST(Type type, std::string value);
+        ReturnAST(DataType type, std::string value);
+        Value* codegen() override;
 };
 
 class VarDefAST : public StatementAST {
     private:
         std::string identider;
         bool defined;
-        Type type;
+        DataType type;
         std::string value;
     public:
-        VarDefAST(std::string identider, Type type, std::string value);
+        VarDefAST(std::string identider, DataType type, std::string value);
+        Value* codegen() override;
 };
 
 class ConditionalAST : public StatementAST {

@@ -12,10 +12,6 @@ class RootAST {
     public:
         void addFunction(FunctionAST* function);
         void addStatement(StatementAST* statement);
-        size_t getFunctionCount();
-        size_t getStatementCount();
-        FunctionAST* getFunction(size_t index);
-        StatementAST* getStatement(size_t index);
 };
 
 #endif
