@@ -3,8 +3,11 @@
 
 #include <vector>
 #include <llvm/IR/Value.h>
+#include "../../lexer/token.h"
 
 using namespace llvm;
+
+int getBinOpPrec(Token::Type type);
 
 class ExpressionAST {
     public:
