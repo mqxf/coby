@@ -51,6 +51,7 @@ class ConditionalAST : public StatementAST {
         StatementAST* statement;
     public:
         ConditionalAST(ExpressionAST* condition, StatementAST* statement);
+        Value* codegen() override;
 };
 
 class LoopAST : public StatementAST {
@@ -59,6 +60,7 @@ class LoopAST : public StatementAST {
         StatementAST* statement;
     public:
         LoopAST(ExpressionAST* condition, StatementAST* statement);
+        Value* codegen() override;
 };
 
 class ExpressionStatementAST : public StatementAST {
@@ -66,6 +68,7 @@ class ExpressionStatementAST : public StatementAST {
         ExpressionAST* expression;
     public:
         ExpressionStatementAST(ExpressionAST* expression);
+        Value* codegen() override;
 };
 class CompountAST : public StatementAST {
     private:
@@ -73,6 +76,7 @@ class CompountAST : public StatementAST {
     public:
         CompountAST();
         void addStatement(StatementAST* statement);
+        Value* codegen() override;
 };
 
 class NoOpAST : public StatementAST {

@@ -12,6 +12,7 @@ class RootAST {
     public:
         void addFunction(FunctionAST* function);
         void addStatement(StatementAST* statement);
+        void codegen();
 };
 
 #endif
