@@ -7,8 +7,6 @@
 
 using namespace llvm;
 
-int getBinOpPrec(Token::Type type);
-
 class ExpressionAST {
     public:
         virtual ~ExpressionAST();

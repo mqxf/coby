@@ -59,7 +59,6 @@ const std::string tokenTypeToStr(Token::Type type) {
         case Token::Type::TOKEN_PREPROCESSOR: return "TOKEN_PREPROCESSOR";
         case Token::Type::TOKEN_CONTAINS_VALUE: return "TOKEN_CONTAINS_VALUE";
         case Token::Type::TOKEN_CONTAINS_KEY: return "TOKEN_CONTAINS_KEY";
-        case Token::Type::TOKEN_BACK_EXTRACT: return "TOKEN_BACK_EXTRACT";
         case Token::Type::TOKEN_ADDRESS: return "TOKEN_ADDRESS";
         case Token::Type::TOKEN_EOF: return "TOKEN_EOF";
         default: return "Invalid token type";

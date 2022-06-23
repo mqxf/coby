@@ -187,7 +187,6 @@ Token* Lexer::nextToken() {
             return advanceWith(new Token("&", Token::Type::TOKEN_CHAIN));
         case '<':
             if(peek(1) == '=') return advanceWith(new Token("<=", Token::Type::TOKEN_LESS_EQUALS));
-            if(peek(1) == '-') return advanceWith(new Token("<-", Token::Type::TOKEN_BACK_EXTRACT));
             if(peek(1) == '<') return advanceWith(new Token("<<", Token::Type::TOKEN_BIT_LEFT_SHIFT));
             return advanceWith(new Token("<", Token::Type::TOKEN_LESS_THAN));
         case '|': 

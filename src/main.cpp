@@ -5,6 +5,7 @@
 #include "args/argParser.h"
 #include "file/file.h"
 #include "coby/coby.h"
+#include "utils/utils.h"
 
 int main(int argc, char* argv[]){
 

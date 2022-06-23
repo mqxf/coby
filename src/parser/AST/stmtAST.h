@@ -36,7 +36,7 @@ class ReturnAST : public StatementAST {
 
 class VarDefAST : public StatementAST {
     private:
-        std::string identider;
+        std::string identifier;
         bool defined;
         DataType type;
         std::string value;
